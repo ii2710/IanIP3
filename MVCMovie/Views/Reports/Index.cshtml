@@ -1,0 +1,79 @@
+﻿@model IEnumerable<IP3Project.Models.Report>
+@{
+    ViewBag.Title = "Index";
+}
+<h2>Report</h2>
+<p>
+    @Html.ActionLink("Create New", "Create")
+    @using (Html.BeginForm("Index", "Reports", FormMethod.Get))
+    {
+    <p>
+        Reporter: @Html.DropDownList("Reporter", "All")
+        Report Title: @Html.TextBox("SearchString")
+        <input type="submit" value="Filter" />
+    </p>
+    }
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ReportTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Reporter)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Details)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Priority)
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReportTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Reporter)
+        </td>
+        
+       <td>
+            @Html.DisplayFor(modelItem => item.ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Details)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Priority)
+        </td>
+
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) 
+            </td>
+        <td>
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) 
+            </td>
+        <td>
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
+
+<p><a class="btn btn-default" @Html.ActionLink("Back to reports list", "Index", "Reports" ) </a></p>
+    
+</btn>
