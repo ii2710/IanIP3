@@ -1,4 +1,5 @@
 # IanIP3
-Group N 
-Edit this, put in more details
-change project name to group number etc
+Group 15 
+Report Management System for 3rd year Intergrated Project For uni.
+
+Using MVC, ASP.NET, SQL, Visual Studio Scaffolding.
